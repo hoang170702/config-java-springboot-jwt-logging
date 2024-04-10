@@ -14,7 +14,7 @@ import java.util.UUID;
 public class LoggingServiceImpl implements LoggingService {
 
     private static final String REQUEST_ID = "request_id";
-    private static final int MAX_BODY_LENGTH = 200;
+    private static final int MAX_BODY_LENGTH = 300;
 
     @Override
     public void logRequest(HttpServletRequest request, Object body) {

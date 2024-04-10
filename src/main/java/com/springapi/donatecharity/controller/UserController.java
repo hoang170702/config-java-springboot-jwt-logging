@@ -3,6 +3,7 @@ package com.springapi.donatecharity.controller;
 
 import com.springapi.donatecharity.models.User;
 import com.springapi.donatecharity.service.user.UserService;
+import io.swagger.v3.oas.annotations.security.SecurityRequirement;
 import lombok.extern.log4j.Log4j;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
