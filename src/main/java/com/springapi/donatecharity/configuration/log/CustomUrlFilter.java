@@ -26,29 +26,9 @@ public class CustomUrlFilter  extends GenericFilterBean {
     public void doFilter(ServletRequest servletRequest, ServletResponse servletResponse, FilterChain filterChain) throws IOException, ServletException {
         String requestId = UUID.randomUUID().toString();
         servletRequest.setAttribute(REQUEST_ID, requestId);
-        logRequest((HttpServletRequest) servletRequest, requestId);
         filterChain.doFilter(servletRequest, servletResponse);
     }
 
-    private void logRequest(HttpServletRequest request, String requestId){
-        if (request != null){
-            StringBuilder data = new StringBuilder();
-            data.append("["+requestId+"] ")
-                    .append("["+request.getServerName()+"] ")
-                    .append("method: ").append(request.getMethod())
-                    .append("path: ")
-                    .append("{")
-                    .append(request.getRequestURL())
-                    .append("}").append(",")
-                    .append("query:")
-                    .append("{")
-                    .append(request.getQueryString())
-                    .append("}")
-                    .append("\n");
-
-            log.info(data.toString());
-        }
-    }
 
 
 }
